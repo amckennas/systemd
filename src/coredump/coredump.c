@@ -1037,6 +1037,8 @@ static int process_kernel(int argc, char* argv[]) {
                 return -EINVAL;
         }
 
+		log_error_errno(r, "This is a test message, if you see this, it worked");
+
         r = parse_pid(argv[CONTEXT_PID + 1], &pid);
         if (r < 0)
                 return log_error_errno(r, "Failed to parse PID.");
